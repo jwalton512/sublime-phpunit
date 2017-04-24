@@ -14,3 +14,10 @@ run_all_phpunit_tests
 ```
 
 By default, this package uses macOS's built-in Terminal.app. If you want to use iTerm, you can do so by setting `"phpunit-sublime-terminal": "iTerm"` in your settings.
+
+## Configuration
+
+Key | Description | Type | Default
+----|-------------|------|--------
+`phpunit-sublime-terminal` | Terminal used for running tests. Options: `iTerm` | `string` | macOS Terminal.app
+`phpunit-sublime-save-files` | Save all unsaved files before running tests | `boolean` | `false`

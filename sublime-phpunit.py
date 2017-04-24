@@ -41,6 +41,12 @@ class PhpunitTestCommand(sublime_plugin.WindowCommand):
     def run_in_terminal(self, command):
         settings = sublime.load_settings("Preferences.sublime-settings")
         terminal_setting = settings.get('phpunit-sublime-terminal', 'Terminal')
+        save_files = settings.get('phpunit-sublime-save-files')
+
+        if save_files:
+            for view in self.window.views():
+                if view.is_dirty() and view.file_name():
+                    view.run_command('save')
 
         osascript_command = 'osascript '
 
